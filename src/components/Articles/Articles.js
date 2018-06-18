@@ -1,5 +1,5 @@
 export default {
-    name: 'About',
+    name: 'Articles',
     props: {
         
     }

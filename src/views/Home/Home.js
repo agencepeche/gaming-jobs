@@ -1,9 +1,17 @@
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld/HelloWorld.vue'
+import Articles from '@/components/Articles/Articles.vue'
+import Interviews from '@/components/Interviews/Interviews.vue'
+import Jobs from '@/components/Jobs/Jobs.vue'
+import Recruiters from '@/components/Recruiters/Recruiters.vue'
+import Research from '@/components/Research/Research.vue'
 
 export default {
     name: 'home',
     components: {
-        HelloWorld
+        Articles,
+        Interviews,
+        Jobs,
+        Recruiters,
+        Research
     }
 }
