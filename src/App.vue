@@ -7,4 +7,5 @@
 
 <script src="./App.js"></script>
 
-<style scoped lang="scss" src="./App.scss"></style>
+<style lang="scss" src="./App.scss"></style>
+

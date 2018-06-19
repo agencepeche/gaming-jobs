@@ -4,6 +4,8 @@ import Interviews from '@/components/Interviews/Interviews.vue'
 import Jobs from '@/components/Jobs/Jobs.vue'
 import Recruiters from '@/components/Recruiters/Recruiters.vue'
 import Research from '@/components/Research/Research.vue'
+import About from '@/components/About/About.vue'
+import Footer from '@/components/Footer/Footer.vue'
 
 export default {
     name: 'home',
@@ -12,6 +14,8 @@ export default {
         Interviews,
         Jobs,
         Recruiters,
-        Research
+        Research,
+        About,
+        Footer
     }
 }

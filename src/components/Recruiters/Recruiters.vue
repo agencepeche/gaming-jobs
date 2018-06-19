@@ -1,5 +1,22 @@
 <template>
-  <p>Recruiters</p>
+  <div id="recruiters">
+    <p>Ils recrutent</p>
+    <div class="cards">
+      <router-link to="/" class="card">
+        <span>Catégorie</span>
+        <span>Lorem ipsum dolor</span>
+      </router-link>
+      <router-link to="/" class="card">
+        <span>Catégorie</span>
+        <span>Lorem ipsum dolor</span>
+      </router-link>
+      <router-link to="/" class="card">
+        <span>Catégorie</span>
+        <span>Lorem ipsum dolor</span>
+      </router-link>
+    </div>
+    <router-link to="/" class="btn-primary">Découvrir plus d'entreprises</router-link>
+  </div>
 </template>
 
 <script src="./Recruiters.js"></script>
