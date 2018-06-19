@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.2.0/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.8d9c83aa7b2ef92d237223cfecada04f.js"
+  "/precache-manifest.1d1f70cde26de58329e0658745e1fa87.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "gaming-jobs"});
