@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.2.0/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.1d1f70cde26de58329e0658745e1fa87.js"
+  "https://agencepeche.github.io/gaming-jobs/precache-manifest.cd6ee80223a9ccc66cf8c994108e3809.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "gaming-jobs"});
