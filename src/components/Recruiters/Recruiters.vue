@@ -3,16 +3,16 @@
     <p>Ils recrutent</p>
     <div class="cards">
       <router-link to="/" class="card">
-        <span>Catégorie</span>
         <span>Lorem ipsum dolor</span>
+        <span>Catégorie</span>
       </router-link>
       <router-link to="/" class="card">
-        <span>Catégorie</span>
         <span>Lorem ipsum dolor</span>
+        <span>Catégorie</span>
       </router-link>
       <router-link to="/" class="card">
-        <span>Catégorie</span>
         <span>Lorem ipsum dolor</span>
+        <span>Catégorie</span>
       </router-link>
     </div>
     <router-link to="/" class="btn-primary">Découvrir plus d'entreprises</router-link>

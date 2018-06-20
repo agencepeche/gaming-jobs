@@ -2,9 +2,11 @@ $yellow: #fba800;
 $white: #ffffff;
 $lightgrey: #e6e6e6;
 $container: 982px;
+$responsive: 1024px;
 
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 
 * {
@@ -12,6 +14,11 @@ body {
   max-width: 100%;
   box-sizing: border-box;
   font-family: 'Montserrat';
+
+  @media(max-width: $responsive) {
+    max-width: 100% !important;
+  }
+
 }
 
 .btn-primary {
@@ -29,15 +36,27 @@ body {
   border: 2px solid $yellow;
 }
 
+.none {
+  display: none !important;
+}
+
+.flex {
+  display: flex !important;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
 .btn-second {
   background-color: none;
   text-decoration: none;
   padding: 12px 35px;
   min-width: 150px;
   border-radius: 2px;
-  color: $yellow !important;
+  color: $white;
   font-weight: bold;
-  border: 2px solid $yellow;
+  border: 2px solid $white;
   border-radius: 20px;
   font-size: 14px;
   font-weight: 600;
@@ -52,43 +71,139 @@ body {
   color: #2c3e50;
 }
 
-#nav {
+#header {
 
-  background-color: $white;
-  padding: 25px 0;
-  display: flex;
+  position: fixed;
+  z-index: 10;
   width: 100%;
-  justify-content: center;
 
-  > div {
-    width: $container;
+  #nav {
+
+    background-color: transparent;
+    padding: 25px 0;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: 100%;
+    justify-content: center;
+    transition: all 0.5s;
 
-    .logo {
+    @media(max-width: $responsive) {
+      padding: 15px 20px;
+      background: $white !important;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.29);
+    }
 
-      img {
-        height: 38px;
+    &.scrolled {
+      background-color: $white;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.29);
+
+      a {
+        color: #525252;
+      }
+
+      .btn-second {
+        color: $yellow;
+        border-color: $yellow;
+      }
+
+      .none {
+        display: flex !important;
+
+        @media(max-width: $responsive) {
+          display: none !important;
+        }
+
       }
 
     }
 
-    ul {
+    > div {
+      width: $container;
       display: flex;
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
+      justify-content: space-between;
+      align-items: center;
 
-      li {
-        margin-left: 10px;
+      @media(max-width: $responsive) {
+        align-items: flex-end;
+        flex-direction: column;
+      }
+
+      .mobile {
+
         display: flex;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
+        cursor: pointer;
 
-        a {
-          padding: 12px 16px;
-          text-decoration: none;
-          color: #525252;
+        span {
+          width: 25px;
+          height: 3px;
+          border-radius: 2px;
+          background-color: $yellow;
+          margin: 2px 0;
+        }
+
+        display: none;
+
+        @media(max-width: $responsive) {
+          display: flex;
+        }
+
+      }
+
+      .logo {
+
+        @media(max-width: $responsive) {
+          display: none;
+        }
+
+        img {
+          height: 38px;
+        }
+
+      }
+
+      ul {
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        @media(max-width: $responsive) {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+        }
+
+        li {
+          margin-left: 10px;
+          display: flex;
+          justify-content: center;
+
+          @media(max-width: $responsive) {
+            width: 100%;
+            align-items: center;
+            margin: 10px 0;
+          }
+
+          a {
+            padding: 12px 16px;
+            text-decoration: none;
+            color: $white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @media(max-width: $responsive) {
+              color: #525252;
+            }
+
+          }
+
+          img {
+            height: 13px;
+          }
+
         }
 
       }
@@ -97,69 +212,73 @@ body {
 
   }
 
-}
-
-#subnav {
-  background: $white;
-  display: flex;
-  width: 100%;
-  justify-content: center;
-
-  ul {
-    list-style-type: none;
-    padding: 0;
-    width: $container;
+  #subnav {
+    background: $white;
     display: flex;
-    justify-content: flex-end;
-    margin: 0;
-    padding: 12px 0;
-    position: relative;
+    width: 100%;
+    justify-content: center;
 
-    &:after {
-      position: absolute;
-      display: block;
-      content:'';
-      right: 0;
-      bottom: 0;
-      width: 400px;
-      border-bottom: 1.5px solid $lightgrey;
+    @media(max-width: $responsive) {
+      display: none;
     }
 
-    li {
-      margin-left: 20px;
+    ul {
+      list-style-type: none;
+      padding: 0;
+      width: $container;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      justify-content: flex-end;
+      margin: 0;
+      padding: 12px 0;
+      position: relative;
 
-      &.language {
-        border-left: 1.5px solid $lightgrey;
-        border-right: 1.5px solid $lightgrey;
+      &:after {
+        position: absolute;
+        display: block;
+        content:'';
+        right: 0;
+        bottom: 0;
+        width: 400px;
+        border-bottom: 1.5px solid $lightgrey;
       }
 
-      a {
-        color: #2f5092;
-        text-decoration: none;
-        font-weight: bold;
-        margin-right: 10px;
-        font-size: 12px;
-        font-weight: 600;
+      li {
+        margin-left: 20px;
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
 
-        img {
-          height: 12px;
+        &.language {
+          border-left: 1.5px solid $lightgrey;
+          border-right: 1.5px solid $lightgrey;
         }
 
-      }
+        a {
+          color: #2f5092;
+          text-decoration: none;
+          font-weight: bold;
+          margin-right: 10px;
+          font-size: 12px;
+          font-weight: 600;
+          display: flex;
+          justify-content: center;
+          align-items: center;
 
-      select {
-        border: none;
-        background: none;
-        padding: 0 5px;
-        color: rgba(16, 101, 173, 0.6);
-        font-size: 13px;
-        font-weight: bold;
+          img {
+            height: 12px;
+          }
+
+        }
+
+        select {
+          border: none;
+          background: none;
+          padding: 0 5px;
+          color: rgba(16, 101, 173, 0.6);
+          font-size: 13px;
+          font-weight: bold;
+        }
+
       }
 
     }
@@ -178,12 +297,20 @@ body {
     background-image: url('assets/research.jpg');
     background-size: cover;
     background-position: bottom;
-    padding: 140px 0 300px 0;
-    width: 100%;
+    padding: 300px 0 300px 0;
     display: flex;
     align-items: center;
     flex-direction: column;
     position: relative;
+    width: 110%;
+    max-width: 110%;
+    border-bottom-right-radius: 50% 150px;
+    border-bottom-left-radius: 50% 150px;
+
+    @media(max-width: $responsive) {
+      border-radius: 0;
+      padding: 120px 20px 50px 20px;
+    }
 
     &:before {
       position: absolute;
@@ -193,6 +320,13 @@ body {
       background-image: linear-gradient(to right, #2f5092, #0779c4);
       opacity: 0.7;
       content:'';
+      border-bottom-left-radius: 50% 150px;
+      border-bottom-right-radius: 50% 150px;
+
+      @media(max-width: $responsive) {
+        border-radius: 0;
+      }
+
     }
 
     p {
@@ -206,11 +340,22 @@ body {
         font-size: 48px;
         font-weight: 800;
         margin-bottom: 10px;
+        text-transform: uppercase;
+
+        @media(max-width: $responsive) {
+          font-size: 30px;
+        }
+
       }
 
       &:nth-child(2) {
         font-size: 30px;
         font-weight: 600;
+
+        @media(max-width: $responsive) {
+          font-size: 18px;
+        }
+
       }
 
     }
@@ -225,10 +370,20 @@ body {
     padding: 40px 20px;
     box-shadow: 0 0 21px 0 rgba(0, 0, 0, 0.19);
 
+    @media(max-width: $responsive) {
+      margin-top: 0;
+      padding: 20px;
+    }
+
     > div {
       display: flex;
       justify-content: space-between;
       position: relative;
+
+      @media(max-width: $responsive) {
+        flex-direction: column;
+        align-items: center;
+      }
 
       &:first-child {
 
@@ -238,7 +393,7 @@ body {
           content: "T";
           position: absolute;
           top: 10px;
-          left: 15px;
+          left: 19px;
           color: #bfc4ce;
         }
 
@@ -254,6 +409,11 @@ body {
         border: solid 2px #f1f1f1;
         border-radius: 25px;
         color: #232323;
+
+        @media(max-width: $responsive) {
+          width: 100%;
+          margin-bottom: 15px;
+        }
 
         &::placeholder {
           color: #bfc4ce;
@@ -272,6 +432,11 @@ body {
         background: transparent;
         overflow: hidden;
         border-radius:25px;
+
+        @media(max-width: $responsive) {
+          margin-bottom: 15px;
+          width: 100%;
+        }
 
         &:after {
           content: '\25BC';
@@ -320,6 +485,11 @@ body {
           button {
             margin-top: 20px;
 
+            @media(max-width: $responsive) {
+              margin-top: 0;
+              margin-bottom: 15px;
+            }
+
             &.more {
               align-self: flex-end;
               border: none;
@@ -327,6 +497,11 @@ body {
               background: none;
               font-size: 12px;
               color: #232323;
+
+              @media(max-width: $responsive) {
+                margin: 0;
+              }
+
             }
 
           }
@@ -349,12 +524,30 @@ body {
   align-items: center;
   padding: 60px 0;
 
+  @media(max-width: $responsive) {
+    padding: 60px 20px;
+  }
+
   p {
     font-size: 24px;
     font-weight: 600;
     color: #4a4a4a;
     letter-spacing: 0.6px;
     margin: 0 0 30px 0;
+    position: relative;
+    padding-bottom: 11px;
+
+    &:after {
+      content:'';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      border-bottom: 3px solid $yellow;
+      width: 58px;
+    }
+
   }
 
   .cards {
@@ -363,18 +556,27 @@ body {
     justify-content: space-between;
     margin-bottom: 30px;
 
+    @media(max-width: $responsive) {
+      flex-direction: column;
+      align-items: center;
+    }
+
     .card {
       width: 314px;
       height: 334px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-end;
       box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.29);
       position: relative;
       background-size: cover;
       background-position: center;
       text-decoration: none;
+
+      @media(max-width: $responsive) {
+        width: 100%;
+      }
 
       &:nth-child(1) {
         background-image: url('assets/research-card-1.jpg');
@@ -399,19 +601,148 @@ body {
       }
 
       span {
-        color: $white;
         z-index: 2;
 
-        &:nth-child(1) {
+        &:nth-child(2) {
           font-size: 13px;
           font-weight: 500;
           text-transform: uppercase;
+          color: $yellow;
+          margin-bottom: 25px;
         }
 
-        &:nth-child(2) {
+        &:nth-child(1) {
+          color: $white;
           font-size: 16px;
           font-weight: 600;
-          margin-top: 5px;
+          margin-bottom: 5px;
+        }
+
+      }
+
+    }
+
+  }
+
+  a {
+    margin-top: 30px;
+  }
+
+}
+
+#interviews {
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0;
+
+  p {
+    font-size: 24px;
+    font-weight: 600;
+    color: #4a4a4a;
+    letter-spacing: 0.6px;
+    margin: 0 0 30px 0;
+    position: relative;
+    padding-bottom: 11px;
+
+    @media(max-width: $responsive) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    &:after {
+      content:'';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      border-bottom: 3px solid $yellow;
+      width: 58px;
+    }
+
+  }
+
+  .cards {
+    width: 1300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+
+    @media(max-width: $responsive) {
+      flex-direction: column;
+      padding: 0 20px;
+    }
+
+    .card {
+      width: 366px;
+      height: 364px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.29);
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      text-decoration: none;
+
+      @media(max-width: $responsive) {
+        width: 100%;
+
+        &:nth-child(2), &:nth-child(3) {
+          display: none;
+        }
+
+      }
+
+      &:nth-child(1) {
+        background-image: url('assets/interviews-card-1.jpg');
+      }
+
+      &:nth-child(2) {
+        background-image: url('assets/interviews-card-2.jpg');
+        width: 480px;
+        height: 408px;
+      }
+
+      &:nth-child(3) {
+        background-image: url('assets/interviews-card-3.jpg');
+      }
+
+      &:before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #000000;
+        opacity: 0.4;
+        content:'';
+      }
+
+      span {
+        z-index: 2;
+
+        &:nth-child(2) {
+          font-size: 13px;
+          font-weight: 500;
+          text-transform: uppercase;
+          color: $yellow;
+          margin-bottom: 25px;
+          margin-left: 14px;
+          margin-right: 14px;
+        }
+
+        &:nth-child(1) {
+          color: $white;
+          font-size: 16px;
+          font-weight: 600;
+          margin-bottom: 5px;
+          margin-left: 14px;
+          margin-right: 14px;
         }
 
       }
@@ -428,12 +759,21 @@ body {
 
 #articles {
 
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 60px 0;
   background-color: #f1f1f1;
+  margin-left: -5%;
+  width: 110%;
+  max-width: 110%;
+  border-bottom-right-radius: 50% 150px;
+  border-bottom-left-radius: 50% 150px;
+
+  @media(max-width: $responsive) {
+    margin-left: 0;
+    border-radius: 0;
+  }
 
   p {
     font-size: 24px;
@@ -441,6 +781,20 @@ body {
     color: #4a4a4a;
     letter-spacing: 0.6px;
     margin: 0 0 30px 0;
+    position: relative;
+    padding-bottom: 11px;
+
+    &:after {
+      content:'';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      border-bottom: 3px solid $yellow;
+      width: 58px;
+    }
+
   }
 
   .cards {
@@ -448,6 +802,12 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
+
+    @media(max-width: $responsive) {
+      flex-direction: column;
+      align-items: center;
+      padding: 0 20px;
+    }
 
     .card {
       width: 314px;
@@ -458,6 +818,14 @@ body {
       box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.29);
       text-decoration: none;
       background: $white;
+
+      @media(max-width: $responsive) {
+        &:nth-child(2), &:nth-child(3) {
+          display: none;
+        }
+
+        width: 100%;
+      }
 
       .content {
         padding: 18px;
@@ -523,12 +891,22 @@ body {
 
 #jobs {
 
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 60px 0;
+  padding: 60px 0 300px 0;
   background-color: #f1f1f1;
+  margin-left: -5%;
+  width: 110%;
+  max-width: 110%;
+  border-bottom-right-radius: 50% 150px;
+  border-bottom-left-radius: 50% 150px;
+
+  @media(max-width: $responsive) {
+    margin-left: 0;
+    padding-bottom: 60px;
+    border-radius: 0;
+  }
 
   p {
     font-size: 24px;
@@ -536,6 +914,19 @@ body {
     color: #4a4a4a;
     letter-spacing: 0.6px;
     margin: 0 0 30px 0;
+    position: relative;
+    padding-bottom: 11px;
+
+    &:after {
+      content:'';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      border-bottom: 3px solid $yellow;
+      width: 58px;
+    }
   }
 
   .cards {
@@ -543,6 +934,10 @@ body {
     display: flex;
     justify-content: space-between;
     margin: 30px 0;
+
+    @media(max-width: $responsive) {
+      padding: 0 20px;
+    }
 
     .card {
       background-size: cover;
@@ -585,6 +980,7 @@ body {
         z-index: 2;
         opacity: 0;
         transition: opacity 0.5s;
+        text-align: left;
 
         &:nth-child(1) {
           font-size: 9px;
@@ -614,6 +1010,12 @@ body {
       background-image: url('assets/jobs-card-1.jpg');
       height: 370px;
 
+      @media(max-width: $responsive) {
+        margin: 0;
+        width: 100%;
+        height: 300px;
+      }
+
     }
 
     .job-right {
@@ -622,6 +1024,10 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
+      @media(max-width: $responsive) {
+        display: none;
+      }
 
       .card-right {
         width: 100%;
@@ -705,12 +1111,24 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 60px 0;
+  margin-top: -200px;
+
+  @media(max-width: $responsive) {
+    margin: 0;
+  }
+
 
   .content {
     width: 855px;
     box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.19);
     padding: 40px 86px;
     position: relative;
+    background-color: $white;
+
+    @media(max-width: $responsive) {
+      box-shadow: none;
+      padding: 40px 20px;
+    }
 
     .icon {
       height: 58px;
@@ -758,6 +1176,11 @@ body {
     display: flex;
     justify-content: space-between;
 
+    @media(max-width: $responsive) {
+      flex-direction: column;
+      align-items: center;
+    }
+
     div {
       display: flex;
       flex-direction: column;
@@ -772,6 +1195,14 @@ body {
         width: 25%;
       }
 
+      @media(max-width: $responsive) {
+        margin: 10px 0;
+        width: 100% !important;
+        padding: 0 20px;
+        text-align: center;
+        align-items: center;
+      }
+
       span {
         font-size: 18px;
         font-weight: bold;
@@ -782,6 +1213,11 @@ body {
         margin: 0;
         padding: 0;
         text-align: left;
+
+        @media(max-width: $responsive) {
+          text-align: center;
+        }
+
       }
 
       a {
@@ -811,9 +1247,15 @@ body {
     display: flex;
     justify-content: space-between;
 
+    @media(max-width: $responsive) {
+      flex-wrap: wrap;
+      padding: 0 20px;
+    }
+
     a {
       color: #525252;
       text-decoration: none;
+      margin: 10px 0;
     }
 
   }

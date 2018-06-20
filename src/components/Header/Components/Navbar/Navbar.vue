@@ -1,8 +1,14 @@
 <template>
-  <div id="nav">
+  <div id="nav" :class="{'scrolled' : isscrolled}">
     <div>
-      <span class="logo"><img src="@/assets/logo.png" alt=""></span>
+      <div class="mobile" @click="doSomething">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <span class="logo"><img :src="scrolled" alt=""></span>
       <ul class="content">
+        <li class="none"><router-link to="/"><img src="@/assets/loupe.svg" alt=""></router-link></li>
         <li><router-link to="/">Job board</router-link></li>
         <li><router-link to="/">Entreprises</router-link></li>
         <li><router-link to="/">Métiers</router-link></li>
