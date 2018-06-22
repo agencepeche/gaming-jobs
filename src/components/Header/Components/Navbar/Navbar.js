@@ -17,6 +17,9 @@ export default {
     doSomething () {
       document.querySelector('#nav .content').classList.toggle('flex')
       document.querySelector('body').classList.toggle('overflow-hidden')
+    },
+    openInscriptionModal () {
+      document.querySelector('#modal-inscription').classList.add('flex')
     }
   },
   created () {

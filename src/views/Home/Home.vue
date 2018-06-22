@@ -2,11 +2,10 @@
   <div id="home">
     <Research />
     <Recruiters />
-    <Articles msg="Welcome to Your Vue.js App" />
+    <Articles/>
     <Interviews />
     <Jobs />
     <About />
-    <Footer />
   </div>
 </template>
 

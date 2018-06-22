@@ -27,13 +27,25 @@ body {
   padding: 12px 35px;
   min-width: 140px;
   color: $white !important;
-  font-weight: bold;
-  border: none;
   border-radius: 20px;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.4px;
   border: 2px solid $yellow;
+  cursor: pointer;
+}
+
+.btn-third {
+  text-decoration: none;
+  background-color: transparent;
+  padding: 12px 35px;
+  min-width: 140px;
+  color: rgba(82, 82, 82, 0.76);
+  font-weight: 600;
+  border: none;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  cursor: pointer;
 }
 
 .none {
@@ -63,12 +75,458 @@ body {
   letter-spacing: 0.4px;
 }
 
+.btn-fourth {
+  background-color: transparent;
+  text-decoration: none;
+  padding: 12px 35px;
+  min-width: 150px;
+  border-radius: 2px;
+  color: $yellow;
+  font-weight: bold;
+  border: 2px solid $yellow;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+}
+
+.presentation {
+  background-image: url('assets/research.jpg');
+  background-size: cover;
+  background-position: bottom;
+  padding: 300px 0 300px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  width: 110%;
+  max-width: 110%;
+  border-bottom-right-radius: 50% 150px;
+  border-bottom-left-radius: 50% 150px;
+
+  @media(max-width: $responsive) {
+    border-radius: 0;
+    padding: 120px 20px 50px 20px;
+  }
+
+  &:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-image: linear-gradient(to right, #2f5092, #0779c4);
+    opacity: 0.7;
+    content:'';
+    border-bottom-left-radius: 50% 150px;
+    border-bottom-right-radius: 50% 150px;
+
+    @media(max-width: $responsive) {
+      border-radius: 0;
+    }
+
+  }
+
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+#modal-inscription {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow: auto;
+
+  .modal {
+    width: $container;
+    padding: 20px 0;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .modal-content {
+      width: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
+
+      p {
+        font-size: 24px;
+        color: #232323;
+        font-weight: bold;
+
+        &.error {
+          color: #b82828;
+          font-size: 18px;
+
+          li {
+            text-align: left;
+            font-size: 12px;
+          }
+
+        }
+
+      }
+
+      .row {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        @media(max-width: $responsive) {
+          flex-direction: column;
+
+          button {
+            margin: 10px 0;
+          }
+
+        }
+
+      }
+
+      input {
+        width: 400px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        padding: 0 8px;
+        border: solid 2px #f1f1f1;
+        border-radius: 25px;
+        color: #232323;
+        margin: 10px 0;
+
+        @media(max-width: $responsive) {
+          width: 100%;
+        }
+
+        &::placeholder {
+          color: #bfc4ce;
+        }
+
+      }
+
+      .btn-primary, .btn-third {
+        margin-top: 20px;
+      }
+
+    }
+
+  }
+
+
+}
+
+#inscription {
+
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 60px;
+
+  .presentation {
+
+    p {
+      z-index: 2;
+      text-align: center;
+      margin: 0;
+      color: $white;
+
+      &:first-child {
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 35px;
+        width: 450px;
+        position: relative;
+        padding-bottom: 20px;
+
+        &:after {
+          content:'';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          border-bottom: 3px solid $yellow;
+          width: 58px;
+        }
+
+        @media(max-width: $responsive) {
+          font-size: 20px;
+        }
+
+      }
+
+      &:nth-child(2) {
+        font-size: 18px;
+        font-style: italic;
+        width: 650px;
+
+      }
+
+    }
+
+  }
+
+  .skills {
+    width: $container;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: -100px;
+    z-index: 2;
+    margin-bottom: 60px;
+
+    @media(max-width: $responsive) {
+      margin-top: 0;
+      flex-direction: column;
+      padding: 0 20px;
+      align-items: center;
+    }
+
+    .skill {
+      width: 314px;
+      height: 225px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: $white;
+      box-shadow: 0px 10px 13px 0 rgba(0, 0, 0, 0.09);
+      padding: 0 20px;
+      margin: 10px 0;
+      cursor: pointer;
+      position: relative;
+
+      &.active {
+
+        .validate {
+          display: flex;
+        }
+
+        // &:after {
+        //   content: '';
+        //   width: 100%;
+        //   position: absolute;
+        //   top: 0;
+        //   left: 0;
+        //   height: 225px;
+        //   background-color: $yellow;
+        //   opacity: 0.4;
+        // }
+
+      }
+
+      .validate {
+        background-color: $yellow;
+        position: absolute;
+        height: 30px;
+        width: 30px;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        top: 15px;
+        right: 15px;
+
+        img {
+          height: 15px;
+        }
+
+      }
+
+      .img-container {
+        z-index: 2;
+        height: 60px;
+        width: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+
+        img {
+          width: 58px;
+        }
+
+      }
+
+      p {
+        z-index: 2;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+    }
+
+  }
+
+  .profile {
+    width: $container;
+    display: flex;
+    margin-top: -150px;
+    z-index: 2;
+    flex-direction: column;
+
+    @media(max-width: $responsive) {
+      margin-top: 0;
+    }
+
+    .form {
+      width: 100%;
+      background: $white;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 30px 60px;
+      box-shadow: 0px 10px 13px 0 rgba(0, 0, 0, 0.09);
+      margin: 20px 0;
+
+      @media(max-width: $responsive) {
+        margin: 0;
+        padding: 20px;
+        box-shadow: none;
+        align-items: center;
+        text-align: center;
+      }
+
+      .title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #232323;
+        margin-bottom: 5px;
+      }
+
+      p {
+        text-align: left;
+      }
+
+      .choices {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 30px 0;
+
+        @media(max-width: $responsive) {
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 0;
+        }
+
+        .skill {
+          margin-right: 25px;
+          border: solid 2px #f1f1f1;
+          border-radius: 25.5px;
+          padding: 10px 28px;
+          display: flex;
+          align-items: center;
+
+          @media(max-width: $responsive) {
+            margin: 10px 0;
+          }
+
+          img {
+            height: 28px;
+            margin-right: 15px;
+          }
+
+          span {
+            font-size: 14px;
+            color: #232323;
+          }
+
+        }
+
+        .choice {
+          width: 25%;
+          display: flex;
+          justify-content: center;
+          padding: 15px 0;
+          border: solid 1.5px #f1f1f1;
+          cursor: pointer;
+
+          @media(max-width: $responsive) {
+            width: 100%;
+            border-radius: 25.5px;
+            margin: 10px 0;
+          }
+
+          &.active {
+            background-color: $yellow;
+            border-color: $yellow;
+
+            span {
+              color: $white;
+            }
+
+          }
+
+          span {
+            color: #232323;
+          }
+
+          &.first {
+            border-top-left-radius: 25.5px;
+            border-bottom-left-radius: 25.5px;
+          }
+
+          &.last {
+            border-top-right-radius: 25.5px;
+            border-bottom-right-radius: 25.5px;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+  .actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+
+    @media(max-width: $responsive) {
+      flex-direction: column;
+    }
+
+    button, a {
+      margin: 20px;
+    }
+
+  }
+
+  a {
+
+    @media(max-width: $responsive) {
+      display: block;
+      margin: 20px;
+    }
+
+  }
+
 }
 
 #header {
@@ -123,8 +581,7 @@ body {
       align-items: center;
 
       @media(max-width: $responsive) {
-        align-items: flex-end;
-        flex-direction: column;
+
       }
 
       .mobile {
@@ -153,12 +610,13 @@ body {
 
       .logo {
 
-        @media(max-width: $responsive) {
-          display: none;
-        }
-
         img {
           height: 38px;
+
+          @media(max-width: $responsive) {
+            height: 21px;
+          }
+
         }
 
       }
@@ -294,40 +752,6 @@ body {
   flex-direction: column;
 
   .presentation {
-    background-image: url('assets/research.jpg');
-    background-size: cover;
-    background-position: bottom;
-    padding: 300px 0 300px 0;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
-    width: 110%;
-    max-width: 110%;
-    border-bottom-right-radius: 50% 150px;
-    border-bottom-left-radius: 50% 150px;
-
-    @media(max-width: $responsive) {
-      border-radius: 0;
-      padding: 120px 20px 50px 20px;
-    }
-
-    &:before {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 100%;
-      background-image: linear-gradient(to right, #2f5092, #0779c4);
-      opacity: 0.7;
-      content:'';
-      border-bottom-left-radius: 50% 150px;
-      border-bottom-right-radius: 50% 150px;
-
-      @media(max-width: $responsive) {
-        border-radius: 0;
-      }
-
-    }
 
     p {
       z-index: 2;
