@@ -10,17 +10,26 @@ export default {
     }
   },
   methods:{
-    checkForm:function(e) {
-      if(this.name && this.firstname && this.mail && this.password) return true
-      this.errors = []
-      if(!this.name) this.errors.push("Le nom est obligatoire")
-      if(!this.firstname) this.errors.push("Le prénom est obligatoire")
-      if(!this.mail) this.errors.push("Le mail est obligatoire")
-      if(!this.password) this.errors.push("Le mot de passe est obligatoire")
-      e.preventDefault()
+    checkForm (e) {
+      if(this.name && this.firstname && this.mail && this.password) {
+        sessionStorage.setItem('name',this.name)
+        sessionStorage.setItem('firstname',this.firstname)
+        sessionStorage.setItem('mail',this.mail)
+        sessionStorage.setItem('password',this.password)
+        this.errors = []
+        this.closeModal()
+        this.$router.push("inscription")
+      }else {
+        if(!this.name) this.errors.push("Le nom est obligatoire")
+        if(!this.firstname) this.errors.push("Le prénom est obligatoire")
+        if(!this.mail) this.errors.push("Le mail est obligatoire")
+        if(!this.password) this.errors.push("Le mot de passe est obligatoire")
+      }
+
+      // e.preventDefault()
     },
     closeModal () {
-      document.querySelector('#modal-inscription').classList.remove('flex')
+      this.$refs.modalInscription.classList.remove('flex')
     }
   }
 }

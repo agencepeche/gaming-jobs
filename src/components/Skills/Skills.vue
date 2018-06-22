@@ -3,7 +3,7 @@
 
     <div class="skills">
 
-      <div class="skill" data-card="1" @click="doSomething(1)">
+      <div class="skill" data-card="1" @click.prevent="doSomething(1)">
         <div class="validate">
           <img src="@/assets/inscription/check.png" alt="">
         </div>
@@ -13,7 +13,7 @@
         <p>Développeurs, Intégrateurs & Data scientists</p>
       </div>
 
-      <div class="skill" data-card="2" @click="doSomething(2)">
+      <div class="skill" data-card="2" @click.prevent="doSomething(2)">
         <div class="validate">
           <img src="@/assets/inscription/check.png" alt="">
         </div>
@@ -23,7 +23,7 @@
         <p>Motion Designers & Réalisateurs</p>
       </div>
 
-      <div class="skill" data-card="3" @click="doSomething(3)">
+      <div class="skill" data-card="3" @click.prevent="doSomething(3)">
         <div class="validate">
           <img src="@/assets/inscription/check.png" alt="">
         </div>
@@ -33,7 +33,7 @@
         <p>Rédacteurs, Traducteurs, Community Managers…</p>
       </div>
 
-      <div class="skill" data-card="4" @click="doSomething(4)">
+      <div class="skill" data-card="4" @click.prevent="doSomething(4)">
         <div class="validate">
           <img src="@/assets/inscription/check.png" alt="">
         </div>
@@ -43,7 +43,7 @@
         <p>Graphistes, Designers, Photographes…</p>
       </div>
 
-      <div class="skill" data-card="5" @click="doSomething(5)">
+      <div class="skill" data-card="5" @click.prevent="doSomething(5)">
         <div class="validate">
           <img src="@/assets/inscription/check.png" alt="">
         </div>
@@ -53,7 +53,7 @@
         <p>Chefs de Projet & Coachs Agile</p>
       </div>
 
-      <div class="skill" data-card="6" @click="doSomething(6)">
+      <div class="skill" data-card="6" @click.prevent="doSomething(6)">
         <div class="validate">
           <img src="@/assets/inscription/check.png" alt="">
         </div>
@@ -63,7 +63,7 @@
         <p>Consultants en Stratégie, Progiciel, Communication…</p>
       </div>
 
-      <div class="skill" data-card="7" @click="doSomething(7)">
+      <div class="skill" data-card="7" @click.prevent="doSomething(7)">
         <div class="validate">
           <img src="@/assets/inscription/check.png" alt="">
         </div>
@@ -73,7 +73,7 @@
         <p>Administrateurs Systèmes & DBA</p>
       </div>
 
-      <div class="skill" data-card="8" @click="doSomething(8)">
+      <div class="skill" data-card="8" @click.prevent="doSomething(8)">
         <div class="validate">
           <img src="@/assets/inscription/check.png" alt="">
         </div>
@@ -95,7 +95,7 @@
 
     </div>
 
-    <router-link to="/inscription/profil" class="btn-primary">Continuer</router-link>
+    <button @click.prevent="submitForm" class="btn-primary">Continuer</button>
     <router-link to="/inscription/profil" class="btn-third">Je le ferai plus tard</router-link>
 
   </div>

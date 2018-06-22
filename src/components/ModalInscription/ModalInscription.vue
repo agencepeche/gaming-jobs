@@ -1,7 +1,7 @@
 <template>
-  <div id="modal-inscription">
+  <div id="modal-inscription" ref="modalInscription">
     <div class="modal">
-      <form class="modal-content" @submit="checkForm" method="post">
+      <form class="modal-content" @submit.prevent="checkForm">
         <p>Inscrivez vous</p>
         <p class="error" v-if="errors.length">
           <b>Merci de corriger la (les) erreur(s) suivant(es)</b>
@@ -17,10 +17,9 @@
         <input type="text" id="firstname" name="firstname" value="" placeholder="Prénom" v-model="firstname">
         <input type="email" id="mail" name="mail" value="" placeholder="Adresse mail" v-model="mail">
         <input type="password" id="password" name="password" value="" placeholder="Mot de passe" v-model="password">
-        <button type="submit" name="button" class="btn-primary">Inscription</button>
-        <span></span>
+        <button @click.prevent="checkForm" type="submit" name="button" class="btn-primary">Inscription</button>
         <router-link to="/" class="btn-third">J'ai déjà un compte Gaming Jobs</router-link>
-        <button type="button" class="btn-third" @click="closeModal">Retour</button>
+        <button type="button" class="btn-third" @click="closeModal">Fermer</button>
       </form>
     </div>
   </div>
