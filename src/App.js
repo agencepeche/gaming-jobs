@@ -15,6 +15,12 @@ export default {
   watch: {
     $route () {
       window.scrollTo(0,0)
+      if (window.innerWidth <= 1024) {
+        const mobile_navbar = document.querySelector('#nav ul')
+        if (mobile_navbar.classList.contains('flex')) {
+          mobile_navbar.classList.remove('flex')
+        }
+      }
     }
   }
 }
