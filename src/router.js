@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home/Home.vue'
 import Inscription1 from './views/Inscription1/Inscription1.vue'
 import Inscription2 from './views/Inscription2/Inscription2.vue'
+import Succeed from './views/Succeed/Succeed.vue'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/inscription/profil',
       name: 'inscription_profil',
       component: Inscription2
+    },
+    {
+      path: '/inscription/confirmation',
+      name: 'inscription_confirmation',
+      component: Succeed
     }
   ]
 })

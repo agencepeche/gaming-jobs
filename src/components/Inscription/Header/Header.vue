@@ -1,7 +1,7 @@
 <template>
   <div class="presentation">
-    <p>{{title}}</p>
-    <p>{{description}}</p>
+    <p v-if="title !== ''">{{title}}</p>
+    <p v-if="description !== ''">{{description}}</p>
   </div>
 </template>
 

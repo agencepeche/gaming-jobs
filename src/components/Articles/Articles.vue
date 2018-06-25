@@ -39,7 +39,10 @@
         </div>
       </router-link>
     </div>
-    <router-link to="/" class="btn-primary">Voir plus d'articles</router-link>
+    <router-link to="/" class="btn-primary">
+      <img src="@/assets/plus-symbol.png" alt="" class="icon">
+      Voir plus d'articles
+    </router-link>
   </div>
 </template>
 

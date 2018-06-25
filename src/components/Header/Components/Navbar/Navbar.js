@@ -4,14 +4,14 @@ export default {
   },
   data () {
     return {
-      scrolled: require('@/assets/logo-blanc.png'),
+      scrolled: (window.innerWidth > 1024) ? require('@/assets/logo-blanc.png') : require('@/assets/logo.png'),
       isscrolled: false
     }
   },
   methods: {
     handleScroll () {
        const scrolled = window.scrollY > 60
-       this.scrolled = scrolled ? require('@/assets/logo.png') : require('@/assets/logo-blanc.png')
+       this.scrolled = (scrolled || window.innerWidth <= 1024) ? require('@/assets/logo.png') : require('@/assets/logo-blanc.png')
        this.isscrolled = scrolled
     },
     doSomething () {

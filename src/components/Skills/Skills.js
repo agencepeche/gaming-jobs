@@ -25,7 +25,7 @@ export default {
       document.querySelector(`.skill[data-card="${number}"]`).classList.toggle('active')
     },
     submitForm () {
-      sessionStorage.setItem('skills', this.selected)
+      sessionStorage.setItem('skills', JSON.stringify(this.selected))
       this.$router.push('inscription/profil')
     }
   }

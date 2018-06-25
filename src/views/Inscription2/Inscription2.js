@@ -10,8 +10,6 @@ export default {
   mounted() {
     if (sessionStorage.getItem('skills') === null) {
       this.$router.push('/')
-    }else {
-      alert(sessionStorage.getItem('skills'))
     }
   }
 }

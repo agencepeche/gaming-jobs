@@ -15,7 +15,10 @@
         <span>Catégorie</span>
       </router-link>
     </div>
-    <router-link to="/" class="btn-primary">Découvrir plus d'entreprises</router-link>
+    <router-link to="/" class="btn-primary">
+      <img src="@/assets/plus-symbol.png" alt="" class="icon">
+      Découvrir plus d'entreprises
+    </router-link>
   </div>
 </template>
 

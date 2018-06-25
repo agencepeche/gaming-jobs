@@ -9,6 +9,17 @@ body {
   overflow-x: hidden;
 }
 
+button, a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  .icon {
+    height: 20px;
+    margin-right: 15px;
+  }
+}
+
 * {
   outline: none;
   max-width: 100%;
@@ -27,12 +38,26 @@ body {
   padding: 12px 35px;
   min-width: 140px;
   color: $white !important;
-  border-radius: 20px;
+  border-radius: 25.5px;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.4px;
   border: 2px solid $yellow;
   cursor: pointer;
+}
+
+.btn-second {
+  background-color: none;
+  text-decoration: none;
+  padding: 12px 35px;
+  min-width: 150px;
+  color: $white;
+  font-weight: bold;
+  border: 2px solid $white;
+  border-radius: 25.5px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
 }
 
 .btn-third {
@@ -48,6 +73,47 @@ body {
   cursor: pointer;
 }
 
+.btn-fourth {
+  background-color: transparent;
+  text-decoration: none;
+  padding: 12px 35px;
+  min-width: 150px;
+  color: $yellow;
+  font-weight: bold;
+  border: 2px solid $yellow;
+  border-radius: 25.5px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+}
+
+.btn-google {
+  background-color: #CE5542 !important;
+  border: none !important;
+  color: $white !important;
+
+  i {
+    margin-right: 10px;
+    font-size: 18px;
+    margin-top: -2px;
+  }
+
+}
+
+.btn-linkedin {
+  background-color: #3482C4 !important;
+  border: none !important;
+  color: $white !important;
+
+  i {
+    margin-right: 10px;
+    margin-top: -4px;
+    font-size: 18px;
+  }
+
+}
+
 .none {
   display: none !important;
 }
@@ -58,37 +124,6 @@ body {
 
 .overflow-hidden {
   overflow: hidden !important;
-}
-
-.btn-second {
-  background-color: none;
-  text-decoration: none;
-  padding: 12px 35px;
-  min-width: 150px;
-  border-radius: 2px;
-  color: $white;
-  font-weight: bold;
-  border: 2px solid $white;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.4px;
-}
-
-.btn-fourth {
-  background-color: transparent;
-  text-decoration: none;
-  padding: 12px 35px;
-  min-width: 150px;
-  border-radius: 2px;
-  color: $yellow;
-  font-weight: bold;
-  border: 2px solid $yellow;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.4px;
-  cursor: pointer;
 }
 
 .presentation {
@@ -185,10 +220,16 @@ body {
       }
 
       .row {
-        width: 100%;
+        width: 400px;
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
-        margin-bottom: 20px;
+
+        button {
+          margin: 10px 0;
+          padding: 0 8px;
+          height: 40px;
+        }
 
         @media(max-width: $responsive) {
           flex-direction: column;
@@ -208,7 +249,7 @@ body {
         align-items: center;
         padding: 0 8px;
         border: solid 2px #f1f1f1;
-        border-radius: 25px;
+        border-radius: 25.5px;
         color: #232323;
         margin: 10px 0;
 
@@ -378,9 +419,37 @@ body {
   }
 
   .profile {
+    margin-top: -150px;
+
+    .form {
+      align-items: flex-start;
+
+      p {
+        text-align: left;
+      }
+
+    }
+
+  }
+
+  .confirmation {
+    margin-top: -200px;
+
+    .form {
+      align-items: center;
+      text-align: center;
+
+      p {
+        text-align: center;
+      }
+
+    }
+
+  }
+
+  .profile, .confirmation {
     width: $container;
     display: flex;
-    margin-top: -150px;
     z-index: 2;
     flex-direction: column;
 
@@ -393,7 +462,6 @@ body {
       background: $white;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
       padding: 30px 60px;
       box-shadow: 0px 10px 13px 0 rgba(0, 0, 0, 0.09);
       margin: 20px 0;
@@ -413,10 +481,6 @@ body {
         margin-bottom: 5px;
       }
 
-      p {
-        text-align: left;
-      }
-
       .choices {
         display: flex;
         justify-content: flex-start;
@@ -433,6 +497,7 @@ body {
 
         .skill {
           margin-right: 25px;
+          margin-bottom: 20px;
           border: solid 2px #f1f1f1;
           border-radius: 25.5px;
           padding: 10px 28px;
@@ -520,11 +585,17 @@ body {
 
   a {
 
+    margin-top: 60px;
+
     @media(max-width: $responsive) {
       display: block;
       margin: 20px;
     }
 
+  }
+
+  .btn-primary {
+    margin: auto;
   }
 
 }
@@ -581,7 +652,7 @@ body {
       align-items: center;
 
       @media(max-width: $responsive) {
-
+        flex-wrap: wrap;
       }
 
       .mobile {
@@ -814,9 +885,9 @@ body {
         &:before {
           padding: 0;
           margin: 0;
-          content: "T";
+          content: url('./assets/recherche.png');
           position: absolute;
-          top: 10px;
+          top: 13px;
           left: 19px;
           color: #bfc4ce;
         }
@@ -831,7 +902,7 @@ body {
         padding-left: 40px;
         padding-right: 8px;
         border: solid 2px #f1f1f1;
-        border-radius: 25px;
+        border-radius: 25.5px;
         color: #232323;
 
         @media(max-width: $responsive) {
@@ -840,7 +911,7 @@ body {
         }
 
         &::placeholder {
-          color: #bfc4ce;
+          color: #232323;
         }
 
       }
@@ -849,13 +920,12 @@ body {
         width: 28%;
         border: solid 2px #f1f1f1;
         height: 40px;
-        border-radius: 25px;
         position: relative;
         display: flex;
         justify-content: center;
         background: transparent;
         overflow: hidden;
-        border-radius:25px;
+        border-radius:25.5px;
 
         @media(max-width: $responsive) {
           margin-bottom: 15px;

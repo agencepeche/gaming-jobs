@@ -95,7 +95,10 @@
 
     </div>
 
-    <button @click.prevent="submitForm" class="btn-primary">Continuer</button>
+    <button @click.prevent="submitForm" class="btn-primary">
+      <img src="@/assets/right-arrow-white.png" alt="" class="icon">
+      Continuer
+    </button>
     <router-link to="/inscription/profil" class="btn-third">Je le ferai plus tard</router-link>
 
   </div>

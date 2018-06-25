@@ -18,7 +18,7 @@ export default {
         sessionStorage.setItem('password',this.password)
         this.errors = []
         this.closeModal()
-        this.$router.push("inscription")
+        this.$router.push("/inscription")
       }else {
         if(!this.name) this.errors.push("Le nom est obligatoire")
         if(!this.firstname) this.errors.push("Le prénom est obligatoire")
