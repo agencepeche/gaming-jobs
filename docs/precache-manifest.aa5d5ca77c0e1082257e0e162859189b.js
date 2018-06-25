@@ -12,15 +12,15 @@ self.__precacheManifest = [
     "url": "https://agencepeche.github.io/gaming-jobs/img/6.ba357d41.png"
   },
   {
-    "revision": "b7f1877a26c21765548e",
-    "url": "https://agencepeche.github.io/gaming-jobs/js/app.b7f1877a.js"
+    "revision": "5764a849b3b0b4df55a4",
+    "url": "https://agencepeche.github.io/gaming-jobs/js/app.5764a849.js"
   },
   {
     "revision": "2201999b1ec1fdf7804574067ac906b1",
     "url": "https://agencepeche.github.io/gaming-jobs/img/5.2201999b.png"
   },
   {
-    "revision": "aeba7fd33f0635ee29622a291db32443",
+    "revision": "e648d5177c1ab2f012a4edbfd6ad1bdc",
     "url": "https://agencepeche.github.io/gaming-jobs/index.html"
   },
   {
@@ -104,7 +104,7 @@ self.__precacheManifest = [
     "url": "https://agencepeche.github.io/gaming-jobs/img/2.f8a49d83.png"
   },
   {
-    "revision": "b7f1877a26c21765548e",
-    "url": "https://agencepeche.github.io/gaming-jobs/css/app.bdd2ce74.css"
+    "revision": "5764a849b3b0b4df55a4",
+    "url": "https://agencepeche.github.io/gaming-jobs/css/app.a08d99ae.css"
   }
 ];
